@@ -1,7 +1,7 @@
 from random import randint
 from time import sleep
 
-SIZE = 50
+SIZE = 80
 
 RED = '\033[31m\033[41m'
 YELLOW =  '\033[33m\033[43m'
@@ -66,15 +66,16 @@ def main():
 
             for i in range(SIZE):
                 for j in range(SIZE):
-                    print(grid[i][j], end='')
                     # if grid[i][j] == ' ':
                     #     print(YELLOW + grid[i][j] + ENDC, end='')
-                    # elif grid[i][j] == '0':
-                    #     print(RED + 'S' + ENDC, end='')
+                    if grid[i][j] == '0':
+                        print(RED + '0' + ENDC, end='')
                     # elif grid[i][j] == '#':
                     #     print('#', end='')
-                    # elif grid[i][j] == 'S':
-                    #     print(RED + 'S' + ENDC, end='')
+                    elif grid[i][j] == 'S':
+                        print(RED + 'S' + ENDC, end='')
+                    else:
+                        print(grid[i][j], end='')
                 print()
 
             sleep(.10)
